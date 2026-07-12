@@ -17,7 +17,8 @@ export const siteConfig = Object.freeze({
   publisher: process.env.PUBLISHER_NAME?.trim() || "Arslan Ejaz",
   governingLaw: process.env.GOVERNING_LAW?.trim() || "",
   policyDate: "July 11, 2026",
-  analyticsEnabled: process.env.NEXT_PUBLIC_ANALYTICS_ENABLED === "true" && Boolean(process.env.NEXT_PUBLIC_GA_ID),
+  gaId: process.env.NEXT_PUBLIC_GA_ID?.trim() || "G-YMSPK6ZB6H",
+  analyticsEnabled: process.env.NEXT_PUBLIC_ANALYTICS_ENABLED !== "false",
   adsEnabled: process.env.NEXT_PUBLIC_ADS_ENABLED === "true" && Boolean(process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID),
 });
 

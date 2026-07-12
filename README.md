@@ -97,7 +97,7 @@ Optional:
 
 - `GOVERNING_LAW`: only after the owner and legal reviewer select a real jurisdiction.
 - `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASSWORD`, `SMTP_FROM`: enable contact delivery when all are set. Form mail is delivered to `admin@chaldeannumerology.online`.
-- `NEXT_PUBLIC_GA_ID` plus `NEXT_PUBLIC_ANALYTICS_ENABLED=true`: reserved for consent-aware GA4. The current abstraction never sends calculator-derived values.
+- `NEXT_PUBLIC_GA_ID` plus `NEXT_PUBLIC_ANALYTICS_ENABLED=true`: enables the configured GA4 tag. The implementation never sends calculator-derived values. Set the flag to `false` to disable it.
 - `NEXT_PUBLIC_ADSENSE_CLIENT_ID` plus `NEXT_PUBLIC_ADS_ENABLED=true`: reserved until AdSense approval and consent integration. No live slot is shipped.
 - `ADSENSE_PUBLISHER_ID`: server-only reference for a future real `ads.txt` entry after approval. Do not publish `ads.txt` without the issued ID.
 
