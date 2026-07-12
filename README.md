@@ -1,19 +1,89 @@
 # Chaldean Numerology Calculator
 
-A production-oriented Next.js website that calculates a Chaldean Name Number in the browser and optionally adds Birth and Life Path numbers from a valid Gregorian birth date. It shows every letter value, word subtotal, compound number, root reduction, and carefully labeled traditional interpretation.
+A fast, responsive, and user-friendly Chaldean numerology calculator built to help users calculate their name number, destiny number, personality number, and life path number using the traditional Chaldean numerology system.
 
-## Requirements and local setup
+Live website: [Chaldean Numerology Calculator](https://chaldeannumerology.online/)
 
-- Node.js 22.x (Hostinger also supports newer versions, but 22 is the deployment target)
-- npm 10 or newer
+## Features
+
+* Chaldean name number calculator
+* Birth date and life path number calculation
+* Compound and root number results
+* Clear number meanings and interpretations
+* Mobile-friendly responsive design
+* Fast page loading
+* SEO-friendly page structure
+* Accessible forms and readable content
+* Privacy-focused calculations
+* Blog-ready structure
+* About, Contact, Privacy Policy, Disclaimer, Terms, and other important pages
+* Sitemap and robots.txt support
+* Structured data for search engines
+
+## Chaldean Numerology Letter Chart
+
+| Number | Letters       |
+| ------ | ------------- |
+| 1      | A, I, J, Q, Y |
+| 2      | B, K, R       |
+| 3      | C, G, L, S    |
+| 4      | D, M, T       |
+| 5      | E, H, N, X    |
+| 6      | U, V, W       |
+| 7      | O, Z          |
+| 8      | F, P          |
+
+In the traditional Chaldean system, the number 9 is not assigned directly to any letter. However, a final calculation may still reduce to 9.
+
+## How It Works
+
+1. The user enters a name.
+2. Each letter is matched with its Chaldean number.
+3. The values are added together.
+4. The calculator displays the compound number and reduced root number.
+5. If a birth date is entered, the calculator also calculates the life path number.
+6. The result section explains the meaning associated with each number.
+
+## Technology
+
+This project may use the following technologies:
+
+* Next.js
+* React
+* TypeScript
+* Tailwind CSS
+* HTML5
+* CSS3
+* JavaScript
+* JSON-LD structured data
+
+## Local Development
+
+Clone the repository:
 
 ```bash
-npm ci
-cp .env.example .env.local
+git clone YOUR_REPOSITORY_URL
+```
+
+Open the project directory:
+
+```bash
+cd YOUR_PROJECT_FOLDER
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
+
+```bash
 npm run dev
 ```
 
-Open `http://localhost:3000`. Never commit `.env.local`.
+Open the local website in your browser:
 
 ## Environment variables
 
@@ -50,50 +120,105 @@ npm run build      # optimized production build
 npm run start      # production server, respects PORT
 npm run check      # lint, typecheck, tests, and build
 ```
+```
 
-## Hostinger GitHub deployment
+## Production Build
 
-1. Push the completed repository to GitHub after review.
-2. In hPanel choose Websites, Add Website, then Node.js Web App and import the Git repository.
-3. Use the repository root as the application root. `package.json` is at that root.
-4. Select Node.js 22.x and npm.
-5. Set environment variables in hPanel, never in Git.
-6. Configure commands:
-   - Install: `npm ci`
-   - Build: `npm run build`
-   - Start: `npm run start`
-7. Deploy, open the temporary and final domains, then check `/api/health/` returns only `{"status":"ok"}`.
-8. Verify direct navigation to every sitemap URL and confirm `SITE_URL` exactly matches the final HTTPS origin before indexing.
+Create a production build:
 
-Hostinger's current managed Node.js flow supports Next.js and detects the Node version from `package.json`. Review the [official Hostinger Node.js deployment guide](https://www.hostinger.com/tutorials/deploy-node-js-application) because hPanel labels can change.
+```bash
+npm run build
+```
 
-## Enabling optional services safely
+Start the production server:
 
-SMTP: configure every SMTP value and test both success and unavailable states. The included in-memory limiter protects one process only, so enable Hostinger or CDN abuse controls for production volume.
+```bash
+npm run start
+```
 
-GA4: complete a regional consent assessment and integrate a suitable consent manager before changing the enable flag. Keep event payloads generic. Never send names, birth dates, totals, roots, or result text.
+## Deployment
 
-AdSense: apply only after the final site, domain, policies, and original content are ready. Approval belongs to Google. After approval, add a reviewed consent solution, a real ad unit implementation in safe content positions, and an `ads.txt` line using the issued publisher ID. Do not place ads beside calculator or navigation controls.
+The website is designed to be deployed through GitHub to a Node.js-compatible hosting platform such as Hostinger.
 
 Blog: follow [BLOG_AUTHORING.md](BLOG_AUTHORING.md). The archive lists the three canonical long-form guides and can be extended with reviewed articles.
 
-## Search Console launch checklist
+Typical deployment process:
 
-- Set and verify the final `SITE_URL`, then redeploy.
-- Verify ownership of the final domain in Search Console.
-- Submit `https://your-real-domain/sitemap.xml` only after canonical URLs are correct.
-- Inspect the homepage URL and test the rendered HTML and mobile usability.
-- Monitor indexing, crawl errors, security issues, and Core Web Vitals.
-- Do not request indexing while the temporary domain is canonical.
+1. Push the completed project to GitHub.
+2. Connect the GitHub repository to Hostinger.
+3. Select the correct project branch.
+4. Use Node.js 22 or the version defined in `package.json`.
+5. Run `npm install`.
+6. Use `npm run build` as the build command.
+7. Use `npm run start` as the start command.
+8. Add the production domain and environment variables.
+9. Confirm that the sitemap, robots.txt, canonical URLs, and metadata use the production domain.
 
-## Privacy and launch checklist
+Production website:
 
-- Confirm calculator network requests never contain field values.
-- Set a monitored contact email and test SMTP if enabled.
-- Keep analytics and ads off until consent and policy work is complete.
-- Review Hostinger log retention and access controls.
-- Run `npm audit --omit=dev` and `npm run check` before each release.
-- Have Privacy, Terms, Cookie, Disclaimer, and data-handling choices reviewed by a qualified lawyer before commercial launch.
-- Check keyboard navigation, 200% zoom, screen-reader field errors, print output, and 320px layout with real devices where possible.
+https://chaldeannumerology.online/
 
-No ranking, AdSense approval, legal compliance, accessibility conformance, security, or performance score is guaranteed by this implementation.
+## SEO
+
+The project is structured to support:
+
+* Descriptive title tags
+* Unique meta descriptions
+* Correct heading hierarchy
+* Canonical URLs
+* Open Graph metadata
+* Twitter card metadata
+* XML sitemap
+* robots.txt
+* Internal linking
+* Mobile usability
+* Fast loading performance
+* FAQ structured data
+* Organization and website schema
+* Search-friendly calculator content
+
+The primary website topic is the Chaldean numerology calculator.
+
+## Privacy
+
+The calculator should process user-entered names and birth dates locally whenever possible.
+
+The application should not permanently store:
+
+* Names entered into the calculator
+* Birth dates
+* Numerology results
+* Personal calculation history
+
+Review the live website’s Privacy Policy for complete details.
+
+## Accuracy Notice
+
+Numerology is a belief-based interpretive system and is not scientifically proven. Calculator results are provided for informational, educational, and entertainment purposes.
+
+The website does not provide medical, legal, financial, psychological, or professional advice.
+
+## Contributing
+
+Contributions that improve accessibility, calculation accuracy, performance, content quality, testing, or user experience are welcome.
+
+Before submitting a contribution:
+
+1. Create a separate branch.
+2. Make and test your changes.
+3. Confirm that the production build succeeds.
+4. Submit a pull request with a clear description.
+5. Avoid adding unnecessary packages or tracking scripts.
+
+## License
+
+All original website content, branding, graphics, and design elements are protected by their respective owner unless otherwise stated.
+
+Source code licensing terms should be added here based on the repository owner’s preferred license.
+
+## Website
+
+Use the free calculator and learn more about the Chaldean numerology system:
+
+**[Chaldean Numerology Calculator](https://chaldeannumerology.online/)**
+
