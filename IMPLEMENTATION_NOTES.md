@@ -8,7 +8,7 @@ Built July 11, 2026 as a root-level Next.js App Router application. The reposito
 - `src/lib/numerology.ts` owns deterministic name and Gregorian date logic. `src/data/chaldean.ts` is the single immutable letter map.
 - Calculator inputs remain in React state only. They are never requested by an API, URL, cookie, analytics event, or browser storage.
 - Site identity and optional integrations are environment-driven through `src/config/site.ts`.
-- The local typed post registry launches empty. `/blog/` is noindex and absent from `sitemap.ts`.
+- The typed post registry contains the three substantive canonical guides. `/blog/` is indexable and presents responsive article cards without duplicating guide content at competing URLs.
 
 ## Decisions and limitations
 

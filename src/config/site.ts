@@ -1,4 +1,4 @@
-const fallbackOrigin = "http://localhost:3000";
+const fallbackOrigin = process.env.NODE_ENV === "production" ? "https://chaldeannumerology.online" : "http://localhost:3000";
 
 function validOrigin(value: string | undefined): string {
   if (!value) return fallbackOrigin;
@@ -13,8 +13,8 @@ export const siteConfig = Object.freeze({
   title: "Chaldean Numerology Calculator – Find Your Name & Destiny Number",
   description: "Calculate your Chaldean numerology number instantly. Enter your name and birth date to reveal your destiny, personality, and life path number.",
   url: validOrigin(process.env.SITE_URL),
-  contactEmail: process.env.CONTACT_EMAIL?.trim() || "",
-  publisher: process.env.PUBLISHER_NAME?.trim() || "",
+  contactEmail: process.env.CONTACT_EMAIL?.trim() || "admin@chaldeannumerology.online",
+  publisher: process.env.PUBLISHER_NAME?.trim() || "Arslan Ejaz",
   governingLaw: process.env.GOVERNING_LAW?.trim() || "",
   policyDate: "July 11, 2026",
   analyticsEnabled: process.env.NEXT_PUBLIC_ANALYTICS_ENABLED === "true" && Boolean(process.env.NEXT_PUBLIC_GA_ID),

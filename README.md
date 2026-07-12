@@ -20,13 +20,13 @@ Open `http://localhost:3000`. Never commit `.env.local`.
 Required before public launch:
 
 - `SITE_URL`: final HTTPS origin, for example the real production origin. Do not include a path or trailing slash.
-- `CONTACT_EMAIL`: public, monitored contact address.
-- `PUBLISHER_NAME`: real owner or organization name when ready to publish it.
+- `CONTACT_EMAIL`: public, monitored contact address. The configured launch address is `admin@chaldeannumerology.online`.
+- `PUBLISHER_NAME`: real owner or organization name. The configured author and publisher is Arslan Ejaz.
 
 Optional:
 
 - `GOVERNING_LAW`: only after the owner and legal reviewer select a real jurisdiction.
-- `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASSWORD`, `SMTP_FROM`: enable contact delivery when all are set. `CONTACT_EMAIL` is the recipient.
+- `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASSWORD`, `SMTP_FROM`: enable contact delivery when all are set. Form mail is delivered to `admin@chaldeannumerology.online`.
 - `NEXT_PUBLIC_GA_ID` plus `NEXT_PUBLIC_ANALYTICS_ENABLED=true`: reserved for consent-aware GA4. The current abstraction never sends calculator-derived values.
 - `NEXT_PUBLIC_ADSENSE_CLIENT_ID` plus `NEXT_PUBLIC_ADS_ENABLED=true`: reserved until AdSense approval and consent integration. No live slot is shipped.
 - `ADSENSE_PUBLISHER_ID`: server-only reference for a future real `ads.txt` entry after approval. Do not publish `ads.txt` without the issued ID.
@@ -75,7 +75,7 @@ GA4: complete a regional consent assessment and integrate a suitable consent man
 
 AdSense: apply only after the final site, domain, policies, and original content are ready. Approval belongs to Google. After approval, add a reviewed consent solution, a real ad unit implementation in safe content positions, and an `ads.txt` line using the issued publisher ID. Do not place ads beside calculator or navigation controls.
 
-Blog: follow [BLOG_AUTHORING.md](BLOG_AUTHORING.md). The empty archive is noindex and excluded from the sitemap until a genuine post is published.
+Blog: follow [BLOG_AUTHORING.md](BLOG_AUTHORING.md). The archive lists the three canonical long-form guides and can be extended with reviewed articles.
 
 ## Search Console launch checklist
 

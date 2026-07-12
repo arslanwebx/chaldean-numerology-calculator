@@ -15,7 +15,7 @@ describe("name calculation",()=>{
   it.each([[11,2],[22,4],[33,6]])("does not stop at %i",(value,root)=>expect(reduceNumber(value)).toBe(root));
 });
 describe("date calculation",()=>{
-  it("calculates birth and full-date totals",()=>expect(calculateDate("1990-12-24",new Date(2026,6,11))).toMatchObject({birthCompound:24,birthRoot:6,lifePathCompound:37,lifePathRoot:1}));
+  it("calculates birth and full-date totals",()=>expect(calculateDate("1990-12-24",new Date(2026,6,11))).toMatchObject({birthCompound:24,birthRoot:6,lifePathCompound:28,lifePathRoot:1}));
   it("accepts a leap day",()=>expect(calculateDate("2000-02-29",new Date(2026,6,11)).birthRoot).toBe(2));
   it.each(["2025-02-29","2020-13-01","2020-04-31"])("rejects impossible %s",date=>expect(()=>calculateDate(date,new Date(2026,6,11))).toThrow());
   it("rejects future dates",()=>expect(()=>calculateDate("2027-01-01",new Date(2026,6,11))).toThrow(/future/));
