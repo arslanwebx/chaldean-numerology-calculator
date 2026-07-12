@@ -1,0 +1,7 @@
+import Link from "next/link";
+import { Logo } from "./logo";
+import { MobileNav } from "./mobile-nav";
+
+export function Header() { return <header className="site-header"><div className="container header-inner"><Logo/><MobileNav/></div></header>; }
+
+export function Footer() { return <footer className="site-footer"><div className="container footer-grid"><div><Logo/><p>A transparent, privacy-first calculator for exploring a traditional number system.</p><p className="fine">Calculations stay in your browser.</p></div><div><h2>Tools and Guides</h2><Link href="/#calculator">Calculator</Link><Link href="/chaldean-numerology-chart/">Chaldean chart</Link><Link href="/numerology-number-meanings/">Number meanings</Link><Link href="/chaldean-vs-pythagorean-numerology/">System comparison</Link></div><div><h2>About and Contact</h2><Link href="/about/">About</Link><Link href="/contact/">Contact</Link><Link href="/editorial-policy/">Editorial policy</Link><Link href="/accessibility/">Accessibility</Link></div><div><h2>Policies</h2><Link href="/privacy-policy/">Privacy policy</Link><Link href="/terms-and-conditions/">Terms and conditions</Link><Link href="/disclaimer/">Disclaimer</Link><Link href="/cookie-policy/">Cookie policy</Link></div></div><div className="container footer-bottom"><span>© {new Date().getFullYear()} Chaldean Numerology Calculator</span><span>For entertainment and personal reflection, not professional advice.</span></div></footer>; }
