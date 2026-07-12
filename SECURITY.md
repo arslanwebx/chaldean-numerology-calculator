@@ -10,6 +10,6 @@ Set `CONTACT_EMAIL` to the owner's monitored security contact before launch. Rep
 
 ## Controls and limitations
 
-The app sets CSP, anti-framing, MIME-sniffing, referrer, permissions, and production HSTS headers. Server inputs use Zod, mail headers are stripped of newlines, SMTP errors are generic, and a single-process rate limit plus honeypot reduces basic form abuse. Distributed attacks require Hostinger or CDN-level controls. Security reduces risk; it is never a guarantee.
+The app sets CSP, anti-framing, MIME-sniffing, referrer, permissions, and production HSTS headers. Server inputs use Zod, request bodies are capped at 16 KiB, mail headers are stripped of newlines, SMTP errors are generic, and a bounded rate limit plus honeypot reduces basic form abuse. SMTP has explicit timeouts, at most two concurrent deliveries, and no persistent pool. Distributed attacks require Hostinger or CDN-level controls. Security reduces risk; it is never a guarantee.
 
 Dependencies should be reviewed with `npm audit --omit=dev`, updated deliberately, and verified with `npm run check`. Never commit `.env` files or credentials.

@@ -12,6 +12,12 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   trailingSlash: true,
   poweredByHeader: false,
+  experimental: {
+    cpus: 1,
+    staticGenerationRetryCount: 1,
+    staticGenerationMaxConcurrency: 1,
+    staticGenerationMinPagesPerWorker: 100,
+  },
   async headers() {
     return [{ source: "/(.*)", headers: [...securityHeaders, ...(process.env.NODE_ENV === "production" ? [{ key: "Strict-Transport-Security", value: "max-age=31536000; includeSubDomains" }] : [])] }];
   },

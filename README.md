@@ -118,6 +118,7 @@ npm run typecheck  # strict TypeScript
 npm run test       # Vitest
 npm run build      # optimized production build
 npm run start      # production server, respects PORT
+npm run diagnose:handles # one-time local handle diagnostic that exits naturally
 npm run check      # lint, typecheck, tests, and build
 ```
 ```
@@ -148,11 +149,13 @@ Typical deployment process:
 2. Connect the GitHub repository to Hostinger.
 3. Select the correct project branch.
 4. Use Node.js 22 or the version defined in `package.json`.
-5. Run `npm install`.
+5. Run `npm ci`.
 6. Use `npm run build` as the build command.
-7. Use `npm run start` as the start command.
+7. Use `node node_modules/next/dist/bin/next start` as the Hostinger start command. This avoids retaining an extra npm launcher process; `npm run start` remains available for local use.
 8. Add the production domain and environment variables.
 9. Confirm that the sitemap, robots.txt, canonical URLs, and metadata use the production domain.
+
+Use Hostinger's built-in Node.js manager with exactly one application instance. Do not add PM2, cluster mode, Nodemon, `nohup`, or `npm run dev`. The direct Next.js command is the only persistent Node process. See [HOSTINGER_PROCESS_AUDIT.md](HOSTINGER_PROCESS_AUDIT.md) for the complete audit and verification steps.
 
 Production website:
 
