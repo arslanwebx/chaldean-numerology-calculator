@@ -35,6 +35,11 @@ h1,h2,h3,a{overflow-wrap:anywhere}.header-inner,.page-hero .narrow,.blog-grid,.b
 
 /* Compact disclosure TOC and dependable article list markers */
 .toc{padding:0;overflow:hidden}.toc summary{position:relative;display:flex;align-items:center;justify-content:center;min-height:54px;padding:.8rem 3rem .8rem 1.25rem;color:var(--primary);font-family:Georgia,serif;font-size:1.2rem;font-weight:700;cursor:pointer;list-style:none}.toc summary::-webkit-details-marker{display:none}.toc summary::after{content:"⌄";position:absolute;right:1.25rem;top:50%;translate:0 -54%;font-family:ui-sans-serif,system-ui,sans-serif;font-size:1rem;line-height:1;transition:transform .18s ease}.toc[open] summary::after{transform:rotate(180deg)}.toc[open] summary{border-bottom:1px solid var(--border)}.toc nav{padding:1rem 1.5rem 1.35rem}.prose>ul{list-style:disc outside}.prose>ol{list-style:decimal outside}.prose ul ul{list-style:circle outside}.prose li::marker{color:var(--secondary);font-weight:700}.footer-contact a{font-size:.76rem;line-height:1.35;white-space:nowrap;letter-spacing:-.01em}
+
+/* Keep headings clean and give the copy below them deliberate breathing room. */
+.eyebrow{display:none}
+.hero h1+p,.section h2+p,.section h3+p,.calculator-intro h2+p,.result-heading h3+p,.interpretation-grid h4+p,.page-hero h1+.lede,.author-card h2+p{margin-top:1rem}
+.table-wrap+p{margin-top:1.5rem}
 @media(max-width:600px){.toc summary{justify-content:flex-start}.footer-contact a{font-size:.72rem}}
 
 .toc summary::after{content:"";width:.48rem;height:.48rem;border:0;border-right:2px solid currentColor;border-bottom:2px solid currentColor;translate:0 -68%;transform:rotate(45deg)}.toc[open] summary::after{translate:0 -28%;transform:rotate(225deg)}
