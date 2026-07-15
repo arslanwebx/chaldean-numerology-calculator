@@ -8,7 +8,7 @@ export function Header() {
 }
 
 const guides = [["Calculator", "/#calculator"], ["Chaldean numerology chart", "/chaldean-numerology-chart/"], ["Number meanings 1 to 9", "/numerology-number-meanings/"], ["Chaldean vs Pythagorean", "/chaldean-vs-pythagorean-numerology/"], ["All guides", "/blog/"]] as const;
-const sitePages = [["About", "/about/"], ["Arslan Ejaz, author", "/author/arslan-ejaz/"], ["Contact", "/contact/"], ["Editorial policy", "/editorial-policy/"], ["Accessibility", "/accessibility/"]] as const;
+const sitePages = [["About", "/about/"], ["Arslan Ejaz, author", "/author/arslan-ejaz/"], ["Contact", "/contact/"], ["Editorial policy", "/editorial-policy/"], ["Accessibility", "/accessibility/"], ["Sitemap", "/sitemap.xml"]] as const;
 const policies = [["Privacy policy", "/privacy-policy/"], ["Terms and conditions", "/terms-and-conditions/"], ["Disclaimer", "/disclaimer/"], ["Cookie policy", "/cookie-policy/"]] as const;
 
 function FooterLinks({ links }: { links: readonly (readonly [string, string])[] }) {
