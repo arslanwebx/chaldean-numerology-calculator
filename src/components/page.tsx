@@ -24,8 +24,8 @@ const articleTocs: Record<string, { id: string; label: string }[]> = {
   ],
 };
 
-export function ContentPage({ title, intro, path, children }: { eyebrow?: string; title: string; intro: string; path: string; children: ReactNode; sections?: { id: string; label: string }[] }) {
-  const tocSections = articleTocs[path] ?? [];
+export function ContentPage({ title, intro, path, children, sections = [] }: { eyebrow?: string; title: string; intro: string; path: string; children: ReactNode; sections?: { id: string; label: string }[] }) {
+  const tocSections = sections.length > 0 ? sections : articleTocs[path] ?? [];
   return <><JsonLd data={[{ "@context": "https://schema.org", "@type": "WebPage", name: title, description: intro }, breadcrumbJson([{ name: "Home", path: "/" }, { name: title, path }])]} /><header className="page-hero"><div className="narrow"><p className="breadcrumbs"><Link href="/">Home</Link> / {title}</p><h1>{title}</h1><p className="lede">{intro}</p>{tocSections.length > 0 && <details className="toc"><summary>Contents</summary><nav aria-label="Table of contents"><ol>{tocSections.map((section) => <li key={section.id}><a href={`#${section.id}`}>{section.label}</a></li>)}</ol></nav></details>}</div></header><section className="section"><div className="narrow"><article id="content" className="prose">{children}</article></div></section></>;
 }
 

@@ -6,5 +6,5 @@ export default defineConfig([
   ...nextVitals,
   ...nextTs,
   { rules: { "react/no-unescaped-entities": "off" } },
-  globalIgnores([".next/**", "coverage/**", "next-env.d.ts"]),
+  globalIgnores([".next/**", ".open-next/**", "coverage/**", "next-env.d.ts"]),
 ]);

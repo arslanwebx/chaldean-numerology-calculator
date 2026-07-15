@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ContentPage } from "@/components/page";
 import { JsonLd } from "@/components/json-ld";
+import { publishedPosts } from "@/content/posts";
 import { pageMetadata } from "@/lib/metadata";
 
 export const metadata = pageMetadata(
@@ -8,12 +9,6 @@ export const metadata = pageMetadata(
   "Learn about Arslan Ejaz, founder and content editor at ChaldeanNumerology.online, his editorial approach, methodology, and published guides.",
   "/author/arslan-ejaz/",
 );
-
-const articles = [
-  ["The Complete Chaldean Numerology Chart", "/chaldean-numerology-chart/", "A transparent reference for letter values, normalization, punctuation, and worked name calculations."],
-  ["Chaldean Number Meanings from 1 to 9", "/numerology-number-meanings/", "A balanced guide to roots, compounds, reflection prompts, and traditional planetary associations."],
-  ["Chaldean vs Pythagorean Numerology", "/chaldean-vs-pythagorean-numerology/", "A method-by-method comparison explaining why calculators can return different results."],
-] as const;
 
 export default function AuthorPage() {
   return <><JsonLd data={{ "@context": "https://schema.org", "@type": "ProfilePage", mainEntity: { "@type": "Person", name: "Arslan Ejaz", jobTitle: "Founder and Content Editor", email: "admin@chaldeannumerology.online", worksFor: { "@type": "Organization", name: "ChaldeanNumerology.online", url: "https://chaldeannumerology.online" } } }} /><ContentPage eyebrow="Author and editor" title="Arslan Ejaz" intro="Founder and Content Editor at ChaldeanNumerology.online, focused on transparent calculation methods, responsible interpretation, and privacy-conscious educational tools." path="/author/arslan-ejaz/">
@@ -23,7 +18,7 @@ export default function AuthorPage() {
     <h2>Areas of focus</h2>
     <ul><li>Chaldean letter mapping and transparent name calculations</li><li>Compound and root-number interpretation with non-deterministic language</li><li>Differences between Chaldean, Cheiro-style, Pythagorean, and modern practices</li><li>Privacy-first calculator design, accessibility, and responsible content standards</li></ul>
     <h2>Published guides</h2>
-    <div className="author-articles">{articles.map(([title, href, description]) => <article key={href}><h3><Link href={href}>{title}</Link></h3><p>{description}</p><Link href={href}>Read guide <span aria-hidden="true">→</span></Link></article>)}</div>
+    <div className="author-articles">{publishedPosts.map(({ title, href, description }) => <article key={href}><h3><Link href={href}>{title}</Link></h3><p>{description}</p><Link href={href}>Read guide <span aria-hidden="true">→</span></Link></article>)}</div>
     <h2>Contact and corrections</h2>
     <p>For corrections, methodology questions, or accessibility feedback, email <a href="mailto:admin@chaldeannumerology.online">admin@chaldeannumerology.online</a> or use the <Link href="/contact/">contact form</Link>. Please do not send birth dates, calculator results, or sensitive personal information.</p>
   </ContentPage></>;
