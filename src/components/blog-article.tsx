@@ -12,7 +12,7 @@ export function BlogArticle({ title, description, path, published, modified = pu
   const displayDate = new Intl.DateTimeFormat("en-US", { dateStyle: "long", timeZone: "UTC" }).format(new Date(`${published}T00:00:00Z`));
   return <>
     <JsonLd data={[articleJson({ title, description, path, image, published, modified }), faqJson(faqs)]} />
-    <ContentPage title={title} intro={description} path={path} sections={sections}>
+    <ContentPage title={title} intro={description} path={path} sections={sections} variant="article">
       <p className="article-details"><span>By <Link href="/author/arslan-ejaz/">Arslan Ejaz</Link></span><span>Published <time dateTime={published}>{displayDate}</time></span></p>
       <figure className="article-featured"><Image src={image} alt={imageAlt} width={1200} height={630} priority sizes="(max-width: 780px) calc(100vw - 1rem), 760px" /></figure>
       {children}
