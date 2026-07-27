@@ -22,8 +22,6 @@ export const posts: readonly BlogPostMeta[] = [
     description: "Learn how to calculate a name number in Chaldean numerology using the 1-to-8 letter chart, compound total, root number, and clear worked examples.",
     published: "2026-07-27",
     author: "Arslan Ejaz",
-    featuredImage: "/images/blog/calculate-name-number-chaldean-numerology.webp",
-    featuredImageAlt: "Example showing how to calculate a name number with the Chaldean chart",
     category: "Calculation guide",
     tags: ["name number", "calculation method", "Chaldean numerology"],
     draft: false,

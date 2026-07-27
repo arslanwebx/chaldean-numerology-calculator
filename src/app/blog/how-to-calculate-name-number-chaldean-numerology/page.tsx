@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { BlogArticle } from "@/components/blog-article";
 import { articleMetadata } from "@/lib/metadata";
@@ -6,10 +5,8 @@ import { articleMetadata } from "@/lib/metadata";
 const path = "/blog/how-to-calculate-name-number-chaldean-numerology/";
 const title = "How to Calculate a Name Number in Chaldean Numerology";
 const description = "Learn how to calculate a name number in Chaldean numerology using the 1-to-8 letter chart, compound total, root number, and clear worked examples.";
-const image = "/images/blog/calculate-name-number-chaldean-numerology.webp";
-const imageAlt = "Example showing how to calculate a name number with the Chaldean chart";
 
-export const metadata = { ...articleMetadata({ title, description, path, image, imageAlt, imageWidth: 1500, imageHeight: 1000, published: "2026-07-27" }), title: { absolute: title } };
+export const metadata = { ...articleMetadata({ title, description, path, image: "/opengraph-image", imageAlt: "Chaldean Numerology Calculator", published: "2026-07-27" }), title: { absolute: title } };
 
 const faqs = [
   { question: "How do I calculate my name number in Chaldean numerology?", answer: "Assign each letter its Chaldean value from 1 to 8, add all values to get the compound total, and reduce that total until one digit remains. Keep both numbers, such as 13/4." },
@@ -24,7 +21,7 @@ const faqs = [
 ] as const;
 
 export default function Page() {
-  return <BlogArticle title={title} description={description} path={path} published="2026-07-27" image={image} imageAlt={imageAlt} imageWidth={1500} imageHeight={1000}
+  return <BlogArticle title={title} description={description} path={path} published="2026-07-27"
     sections={[{ id: "glance", label: "The calculation at a glance" }, { id: "chart", label: "Chaldean numerology letter chart" }, { id: "steps", label: "Step-by-step calculation" }, { id: "examples", label: "Worked examples" }, { id: "compound", label: "Compound number vs. root number" }, { id: "master-numbers", label: "Should 11, 22, and 33 be reduced?" }, { id: "names", label: "Which name should you use?" }, { id: "characters", label: "Special characters and non-Latin names" }, { id: "mistakes", label: "Common calculation mistakes" }, { id: "differences", label: "Why calculators differ" }, { id: "meaning", label: "What the final name number means" }, { id: "limits", label: "Limits and responsible use" }, { id: "faq", label: "Frequently asked questions" }, { id: "conclusion", label: "Conclusion" }, { id: "sources", label: "Sources and further reading" }]} faqs={faqs}>
     <p>To calculate a name number in Chaldean numerology, assign each letter its value from the traditional 1-to-8 chart, add the values to find the compound total, and then reduce that total to one digit. Keep both results: ALICE totals 13 and reduces to 4, so its complete name number is written as 13/4.</p>
     <p><strong>Letters → values → compound total → root number</strong></p>
@@ -45,9 +42,6 @@ export default function Page() {
     <h3>Step 4: Add the letter values</h3><p><strong>1 + 3 + 1 + 3 + 5 = 13</strong></p><p>The total 13 is the compound number. Preserve it before reducing the result. The compound records the exact route created by the letters in that spelling.</p>
     <h3>Step 5: Reduce the compound to a root</h3><p><strong>13 → 1 + 3 = 4</strong></p><p>Four is the root number. Continue adding digits only when the result still has more than one digit. For example, 58 becomes 5 + 8 = 13, and then 1 + 3 = 4.</p>
     <h3>Step 6: Record both numbers</h3><p><strong>ALICE = 13/4</strong></p><p>Writing both numbers prevents useful information from disappearing. A result of 13/4 is not two competing answers: 13 is the compound total, while 4 is the final root.</p>
-
-    <h2>Visual guide: from letters to 13/4</h2>
-    <figure><Image src="/images/blog/chaldean-name-number-calculation-infographic.webp" alt="Chaldean name-number calculation steps with the letter chart and worked examples" width={1024} height={1536} loading="lazy" sizes="(max-width: 780px) calc(100vw - 1rem), 760px" /></figure>
 
     <h2 id="examples">Worked examples</h2>
     <h3>Example 1: JOHN becomes 18/9</h3><p>JOHN shows why the absence of 9 from the letter chart does not prevent a final root of 9.</p><p>J = 1, O = 7, H = 5, N = 5. The total is 1 + 7 + 5 + 5 = 18. Reducing 18 gives 1 + 8 = 9, so JOHN is written as 18/9.</p>
