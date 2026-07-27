@@ -5,8 +5,10 @@ import { articleMetadata } from "@/lib/metadata";
 const path = "/blog/how-to-calculate-name-number-chaldean-numerology/";
 const title = "How to Calculate a Name Number in Chaldean Numerology";
 const description = "Learn how to calculate a name number in Chaldean numerology using the 1-to-8 letter chart, compound total, root number, and clear worked examples.";
+const image = "/images/blog/calculate-name-number-chaldean-numerology-featured.webp";
+const imageAlt = "Open notebook with letter tiles, counting counters, and a visual name-number calculation";
 
-export const metadata = { ...articleMetadata({ title, description, path, image: "/opengraph-image", imageAlt: "Chaldean Numerology Calculator", published: "2026-07-27" }), title: { absolute: title } };
+export const metadata = { ...articleMetadata({ title, description, path, image, imageAlt, imageWidth: 1500, imageHeight: 1000, published: "2026-07-27" }), title: { absolute: title } };
 
 const faqs = [
   { question: "How do I calculate my name number in Chaldean numerology?", answer: "Assign each letter its Chaldean value from 1 to 8, add all values to get the compound total, and reduce that total until one digit remains. Keep both numbers, such as 13/4." },
@@ -21,7 +23,7 @@ const faqs = [
 ] as const;
 
 export default function Page() {
-  return <BlogArticle title={title} description={description} path={path} published="2026-07-27"
+  return <BlogArticle title={title} description={description} path={path} published="2026-07-27" image={image} imageAlt={imageAlt} imageWidth={1500} imageHeight={1000}
     sections={[{ id: "glance", label: "The calculation at a glance" }, { id: "chart", label: "Chaldean numerology letter chart" }, { id: "steps", label: "Step-by-step calculation" }, { id: "examples", label: "Worked examples" }, { id: "compound", label: "Compound number vs. root number" }, { id: "master-numbers", label: "Should 11, 22, and 33 be reduced?" }, { id: "names", label: "Which name should you use?" }, { id: "characters", label: "Special characters and non-Latin names" }, { id: "mistakes", label: "Common calculation mistakes" }, { id: "differences", label: "Why calculators differ" }, { id: "meaning", label: "What the final name number means" }, { id: "limits", label: "Limits and responsible use" }, { id: "faq", label: "Frequently asked questions" }, { id: "conclusion", label: "Conclusion" }, { id: "sources", label: "Sources and further reading" }]} faqs={faqs}>
     <p>To calculate a name number in Chaldean numerology, assign each letter its value from the traditional 1-to-8 chart, add the values to find the compound total, and then reduce that total to one digit. Keep both results: ALICE totals 13 and reduces to 4, so its complete name number is written as 13/4.</p>
     <p><strong>Letters → values → compound total → root number</strong></p>
