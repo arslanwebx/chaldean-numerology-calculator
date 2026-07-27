@@ -16,6 +16,19 @@ export type BlogPostMeta = {
 
 export const posts: readonly BlogPostMeta[] = [
   {
+    slug: "how-to-calculate-name-number-chaldean-numerology",
+    href: "/blog/how-to-calculate-name-number-chaldean-numerology/",
+    title: "How to Calculate a Name Number in Chaldean Numerology",
+    description: "Learn how to calculate a name number in Chaldean numerology using the 1-to-8 letter chart, compound total, root number, and clear worked examples.",
+    published: "2026-07-27",
+    author: "Arslan Ejaz",
+    featuredImage: "/images/blog/calculate-name-number-chaldean-numerology.webp",
+    featuredImageAlt: "Example showing how to calculate a name number with the Chaldean chart",
+    category: "Calculation guide",
+    tags: ["name number", "calculation method", "Chaldean numerology"],
+    draft: false,
+  },
+  {
     slug: "chaldean-numerology-for-beginners",
     href: "/blog/chaldean-numerology-for-beginners/",
     title: "Chaldean Numerology for Beginners",

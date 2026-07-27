@@ -21,6 +21,7 @@ export default function Page() {
     <h2 id="reading">How to read a compound and root result</h2>
     <p>A result such as 13/4 is not two competing answers. Thirteen records the exact sum of the entered letters. Four is the root reached by adding 1 + 3. The compound preserves the route, while the root supplies the broad one-digit theme used for the main interpretation.</p>
     <p>Read these meanings as prompts, not labels. A person can recognize part of a description, reject another part, or express the same theme differently across situations. Names, language, upbringing, circumstances, and personal choices cannot be reduced to a single digit.</p>
+    <p>Need to verify the arithmetic first? Follow the step-by-step guide on <a href="/blog/how-to-calculate-name-number-chaldean-numerology/">how to calculate a name number in Chaldean numerology</a>.</p>
     <h2 id="roots">Root meanings 1 through 9</h2>
     {ROOT_MEANINGS.map((meaning) => <section key={meaning.number} className="card">
       <h3>{meaning.number}. {meaning.title}</h3>

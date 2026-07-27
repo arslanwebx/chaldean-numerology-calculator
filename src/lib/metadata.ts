@@ -6,7 +6,7 @@ export function pageMetadata(title: string, description: string, path: string, n
   return { title, description, authors: [{ name: "Arslan Ejaz" }], creator: "Arslan Ejaz", publisher: siteConfig.publisher, alternates: { canonical }, robots: noIndex ? { index: false, follow: true } : undefined, openGraph: { title, description, url: canonical, siteName: siteConfig.name, locale: "en_US", type: "website", images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: `${siteConfig.name}, a browser-based calculation guide` }] }, twitter: { card: "summary_large_image", title, description, images: ["/opengraph-image"] } };
 }
 
-export function articleMetadata({ title, description, path, image, imageAlt, published, modified = published }: { title: string; description: string; path: string; image: string; imageAlt: string; published: string; modified?: string }): Metadata {
+export function articleMetadata({ title, description, path, image, imageAlt, imageWidth = 1200, imageHeight = 630, published, modified = published }: { title: string; description: string; path: string; image: string; imageAlt: string; imageWidth?: number; imageHeight?: number; published: string; modified?: string }): Metadata {
   const canonical = new URL(path, siteConfig.url).toString();
   return {
     title,
@@ -25,7 +25,7 @@ export function articleMetadata({ title, description, path, image, imageAlt, pub
       publishedTime: published,
       modifiedTime: modified,
       authors: ["Arslan Ejaz"],
-      images: [{ url: image, width: 1200, height: 630, alt: imageAlt }],
+      images: [{ url: image, width: imageWidth, height: imageHeight, alt: imageAlt }],
     },
     twitter: { card: "summary_large_image", title, description, images: [image] },
   };
@@ -34,7 +34,7 @@ export function articleMetadata({ title, description, path, image, imageAlt, pub
 export function articleJson({ title, description, path, image, published, modified = published }: { title: string; description: string; path: string; image: string; published: string; modified?: string }) {
   return {
     "@context": "https://schema.org",
-    "@type": "BlogPosting",
+    "@type": "Article",
     headline: title,
     description,
     image: [new URL(image, siteConfig.url).toString()],
